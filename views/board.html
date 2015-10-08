@@ -1,0 +1,53 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../public/css/layout.css">
+<link rel="stylesheet" type="text/css" href="../public/css/button.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+    
+
+
+	$('td').click(function() {
+   		if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+            // do unselected stuff
+        } else {            
+            $(this).addClass('selected');
+            // do selected stuff
+        }
+	});
+
+	$('.action').click(function() {
+        var text = $(".box").html();
+        var className = $(this).attr('class');
+        var value = $(this).val();
+
+          $(".box").html(text+"<input class='"+className+"' type='button' value='"+value+"'>");
+    });
+});
+</script>
+</head>
+<body>
+<table>
+	<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+	<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+<input class="action button purple" type="button" value="Up">
+<input class="action button turquoise" type="button" value="Left">
+<input class="action button orange" type="button" value="Right">
+<input class="action button red" type="button" value="Down">
+
+<div class="box"></div>
+<input class="fire button yellow" type="submit" value="Fire"/>
+</body>
+
+</html>
